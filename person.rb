@@ -9,7 +9,6 @@ class Person
     @parent_permission = parent_permission
   end
 
-  # Private method is_of_age? that returns true if @age is greater or equal to 18 and false otherwise.
   def of_age?
     @age >= 18
   end
@@ -18,5 +17,6 @@ class Person
   def can_use_services?
     of_age? || @parent_permission
   end
+  # Private method is_of_age? that returns true if @age is greater or equal to 18 and false otherwise.
   private :of_age?
 end

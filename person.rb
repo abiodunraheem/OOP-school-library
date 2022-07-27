@@ -1,9 +1,11 @@
 require_relative './nameable.rb'
+
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(age, name: 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @age = age
     @name = name
@@ -14,6 +16,7 @@ class Person < Nameable
     @age >= 18
   end
 
+  # metthod to return correct_name
   def correct_name
     @name
   end

@@ -1,4 +1,4 @@
-require_relative './nameable.rb'
+require_relative './nameable'
 
 class Person < Nameable
   attr_reader :id
@@ -25,7 +25,6 @@ class Person < Nameable
   def can_use_services?
     of_age? || @parent_permission
   end
-  
   # Private method is_of_age? that returns true if @age is greater or equal to 18 and false otherwise.
   private :of_age?
 end

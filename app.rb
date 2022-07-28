@@ -32,6 +32,8 @@ class App
       menu_options
       print '(Option number): '
       option = gets.chomp.strip.to_i
+      choice_options(option)
+      puts
     end
     puts ' Closing Application '
     puts '      Good Bye!      '
@@ -60,19 +62,15 @@ class App
     end
   end
 
-  def create_person
-    entry = nil
-    print 'Choose option 1 to create a Student or option 2 for a Teacher: '
-    until [1, 2].include?(entry)
-      entry = gets.chomp.strip.to_i
-      puts
-      puts 'Choose option 1 for Student or option 2 for Teacher' unless [1, 2].include?(entry)
-    end
-    case entry
-    when 1
-      create_student
-    when 2
-      create_teacher
+  def all_books
+    key = 1
+    puts
+    puts 'Books'.upcase
+    puts
+    puts 'No book yet! Choose option 4 to add a book ' if @books.empty?
+    @books.each do |book|
+      puts "#{key} - #{book.title} by #{book.author}"
+      key += 1
     end
   end
 
@@ -91,15 +89,19 @@ class App
     end
   end
 
-  def all_books
-    key = 1
-    puts
-    puts 'Books'.upcase
-    puts
-    puts 'No book yet! Choose option 4 to add a book ' if @books.empty?
-    @books.each do |book|
-      puts "#{key} - #{book.title} by #{book.author}"
-      key += 1
+  def create_person
+    entry = nil
+    print 'Choose option 1 to create a Student or option 2 for a Teacher: '
+    until [1, 2].include?(entry)
+      entry = gets.chomp.strip.to_i
+      puts
+      puts 'Choose option 1 for Student or option 2 for Teacher' unless [1, 2].include?(entry)
+    end
+    case entry
+    when 1
+      create_student
+    when 2
+      create_teacher
     end
   end
 

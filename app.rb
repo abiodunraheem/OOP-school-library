@@ -25,15 +25,13 @@ class App
   end
 
   def run
-    puts 'Welcome to the book store'
+    puts 'Welcome to School Library App'
     option = nil
-    while option != 7
-      puts 'Please enter a number to choose an option: '
+    while option > 0 and option <= 7
+      puts 'Please choose an option by entering a number: '
       menu_options
       print '(Option number): '
       option = gets.chomp.strip.to_i
-      choice_options(option)
-      puts
     end
     puts ' Closing Application '
     puts '      Good Bye!      '

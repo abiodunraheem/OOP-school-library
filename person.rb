@@ -1,7 +1,7 @@
 require_relative './nameable'
 
 class Person < Nameable
-  attr_reader :id
+  attr_reader :id, :rentals
   attr_accessor :name, :age
 
   def initialize(age, name: 'Unknown', parent_permission: true)
@@ -10,6 +10,7 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def of_age?
@@ -19,6 +20,11 @@ class Person < Nameable
   # metthod to return correct_name
   def correct_name
     @name
+  end
+
+  # add rental method
+  def add_rental(rental)
+    @rentals.push(rental)
   end
 
   # Public method can_use_services? that returns true if person is of age or if they have permission from parents.

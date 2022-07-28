@@ -27,7 +27,7 @@ class App
   def run
     puts 'Welcome to School Library App'
     option = nil
-    while option > 0 and option <= 7
+    while option >= 1 and option <= 7
       puts 'Please choose an option by entering a number: '
       menu_options
       print '(Option number): '

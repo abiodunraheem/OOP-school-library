@@ -82,8 +82,8 @@ class App
     puts 'No people yet! Choose option 3 to add a person ' if @people.empty?
     @people.each do |person|
       print "#{key} - [#{person.class.name} ID]: #{person.id} Age: #{person.age} Name: #{person.name} "
-      print "Parent Permission: #{person.parent_permission}" if person.is_a?(Student)
-      print "Specialization: #{person.specialization}" if person.is_a?(Teacher)
+      print "Parent Permission: #{parent_permission}" if is_a?(Student)
+      print "Specialization: #{specialization}" if is_a?(Teacher)
       puts
       key += 1
     end
